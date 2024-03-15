@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>Ejercicio 1</title>
+    </head>
+    <body>
+        <script>
+            function EsGrito(f){
+                let flag = 'escrito';
+                let countGr = 0;
+                let countLetra = 0;
+                for(let i = 0; i < f.length; i++){
+                    if(f.charAt(i) == '!'){        //charAt(var) sirve para inspeccionar caracter por caracter
+                        countGr++;
+                            //si en la inspeccion de caracteres se encuentra un !
+                            //aumenta un punto el contadro de exclamaciones
+
+                    }
+                    if((f.charAt(i)).match(/[a-z]/i)){
+                        countLetra++;
+                            //si se encuentran letras aumenta el contador
+                            //de letras
+
+                    }
+                }
+                if(countGr > countLetra){
+                    flag = 'ESGRITO';       //dependiendo de la diferencia entre ambos contadores
+                                            //se definira si es escrito o ESGRITO
+                }
+                return flag;
+            }
+
+            let frase = prompt('ingrese una frase','');
+
+            document.write(EsGrito(frase));
+        </script>
+    </body>
+</html>
